@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+  <meta charset="UTF-8">
+  <title>Mission to Mars</title>
+
+</head>
+
+
+<body>
+    <div class="container text-center">
+      <h1 class="jumbotron">Mission to Mars
+      <br> 
+      <div>
+        <button type="button" class="btn btn-primary" href="/scrape">Scrape New Data</button>
+      </div>
+    </h1>
+    </div>
+
+    <div class="row" id="mars-news">
+            <div class="col-md-12">
+                  <h3>Latest Mars News</h3>
+                  <h4>{{mars_scrape.news_title}}</h4>
+                  <p>{{mars_scrape.news_paragraph}}</p>
+            </div>
+    </div>
+    
+    
+    <div class="row" id="mars-img">
+            <div class="col-md-8">
+                  <h3>Featured Mars Image</h3>
+                  <h4>{{mars_scrape.news_title}}</h4>
+                  <p>{{mars_scrape.news_paragraph}}</p>
+            </div>
+    </div> 
+
+
+    <div class="col-md-8">
+                
+            <div class="panel panel-default">
+                <div class="panel-body">
+                   <h3>Featured Mars Image</h3>
+                   <hr>
+                   <img src="{{mars_scrape.featured_image_url}}" alt="Mars Featured Image">
+                </div>
+            </div>
+    </div>        
+
+
+
+
+    <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Current Weather on Mars</h3>
+                </div>
+                <div class="panel-body">
+                    <p>{{mars_scrape.mars_weather}}</p>
+                </div>
+            </div>
+        </div>
+
+    <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Mars Facts</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table>
+                            {{mars_scrape.html_table}}
+                        </table>
+                    </div>
+            </div>
+    </div>
+
+
+    <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <h3 style="text-align: center">Mars Hemispheres</h3>
+                        <hr>
+                    </div>
+
+    <!-- <div class="panel-body">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src= {{mars_scrape['hms_dicts'][0]['img_url'][0]}} alt="Hemisphere1">
+                <div class="caption">
+                    <h4>{{mars_scrape['hms_dicts'][0]['title'][0]}}</h4>
+                </div>
+        </div>
+    </div>      -->
+<!-- 
+    <div class="panel-body">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img src= {{mars_scrape.hms_dicts['img_url'][1]}} alt="Hemisphere1">
+                    <div class="caption">
+                        <h4>{{mars_scrape.hms_dicts['title'][1]}}</h4>
+                    </div>
+            </div>
+        </div> 
+    
+    <div class="panel-body">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <img src= {{mars_scrape.hms_dicts.img_url[2]}} alt="Hemisphere1">
+                        <div class="caption">
+                            <h4>{{mars_scrape.hms_dicts['title'][2]}}</h4>
+                        </div>
+                </div>
+    </div>     
+
+    <div class="panel-body">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img src= {{mars_scrape.hms_dicts.img_url[3]}} alt="Hemisphere1">
+                    <div class="caption">
+                        <h4>{{mars_scrape.hms_dicts['title'][3]}}</h4>
+                    </div>
+            </div>
+    </div>       -->
+
+
+
+
+
+  </body>
+  
+  </html>
+  
