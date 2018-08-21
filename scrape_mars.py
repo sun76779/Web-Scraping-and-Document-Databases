@@ -1,15 +1,16 @@
-
-# coding: utf-8
-
-# In[32]:
-
-
 from splinter import Browser
 from bs4 import BeautifulSoup
 from datetime import datetime
 import pandas as pd
 import pymongo
 import requests
+
+
+from splinter import Browser
+from bs4 import BeautifulSoup
+from datetime import datetime
+import pandas as pd
+import time
 
 
 def scrape_mars():
@@ -120,9 +121,10 @@ def scrape_mars():
 
     # URL of page to be scraped Mars' hemispheres 
     hms_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
-    hms_dicts = {}
+    
 
     for i in range(1,9,2):
+        hms_dicts = {}
         hms_dict = {}
         
         browser.visit(hms_url)
@@ -153,8 +155,7 @@ def scrape_mars():
         print(img_path)
         hms_dict['img_url'] = img_path
 
-        hms_dicts.append(hms_dict)
-
+        #hms_dicts.append(hms_dict)
 
 
     mars_scrape = {
@@ -164,6 +165,7 @@ def scrape_mars():
             "mars_weather": mars_weather,
             "html_table": html_table,
             #"hms_dicts": hms_dicts
-        }
+            }
+    
     #print(mars_scrape)
     return mars_scrape
